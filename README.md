@@ -42,4 +42,15 @@ CONTENTFUL_SPACE_ID = ( from contentful )
 CONTENTFUL_ACCESS_TOKEN = ( from contentful )
 
 ## Contentful
+#### Model Templates
+###### Homepage ( homepage ): 
+Description ( description ) - text;     
+Profileimage ( profileimage ) - Media ( filter image )   
 
+###### Post ( page ):    
+
+Title ( title ) - text;    
+Description ( description ) - text;     
+Content ( content ) - ( rich text );     
+Image ( image ) - Media;     
+Id (id) - text ( autocreate from title )
