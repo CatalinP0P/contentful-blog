@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Layout({ children }) {
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="py-8 bg-stone-100">

@@ -2,12 +2,13 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import client from '@/lib/contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import RichTextRenderer from '@/components/RichTextRenderer'
 
 export default function Post({ post }) {
     console.log(post)
     return (
         <div className="pt-16">
-            <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-2 mx-2 lg:mx-8">
+            <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-32 mx-2 lg:mx-8">
                 <div className="w-full lg:w-[40%] h-0 pb-[80%] md:pb-[40%] lg:pb-[30%] overflow-hidden relative rounded-3xl">
                     <img
                         src={post.fields.image.fields.file.url}
@@ -28,7 +29,7 @@ export default function Post({ post }) {
             </div>
             <hr className="mt-8 mx-2 lg:mx-8 border-t-2 border-stone-100"></hr>
             <div className="prose-base md:prose-lg xl:prose-xl w-full mx-2 lg:mx-8 py-4">
-                {documentToReactComponents(post.fields.content)}
+                {<RichTextRenderer content={post.fields.content} />}
             </div>
         </div>
     )
